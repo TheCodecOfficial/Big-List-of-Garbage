@@ -90,11 +90,11 @@
         <figure class="my-8">
     <img src="images/render.png" alt="An image description" class="rounded-lg w-full mb-0">
     <figcaption class="figure-caption">An image description</figcaption>
-</figure><h3>Chapter 1</h3><p>This is some introductory text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit auctor vehicula. Ut non laoreet eros, lacinia tristique erat. Fusce tincidunt, mauris nec euismod accumsan, quam tellus eleifend eros, vel imperdiet ex libero a arcu. Curabitur dapibus pulvinar nibh, quis mattis urna fermentum at. Suspendisse blandit interdum tortor, non sollicitudin urna cursus quis. Vivamus ac tortor a dui congue aliquam vitae in nisl.</p><p>Latex is supported $e^{i\pi} + 1 = 0$.
+</figure><h3>Chapter 1</h3><p>This is some introductory text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit auctor vehicula. Ut non laoreet eros, lacinia tristique erat. Fusce tincidunt, mauris nec euismod accumsan, quam tellus eleifend eros, vel imperdiet ex libero a arcu. Curabitur dapibus pulvinar nibh, quis mattis urna fermentum at. Suspendisse blandit interdum tortor, non sollicitudin urna cursus quis. Vivamus ac tortor a dui congue aliquam vitae in nisl.</p><h4>Subchapter 1.1</h4><p>LaTeX is supported $e^{i\pi} + 1 = 0$.
 Multiline math works too:
 $$
 L_o = L_e + \int_\Omega f_r L_i (\omega_i) \cos\theta d\omega_i
-$$</p><h3>Chapter 2</h3><p>Image comparisons example:</p><figure class="my-8">
+$$</p><h3>Chapter 2</h3><p>Image comparisons example:</p><p>To make it more readable, you can indent the parameters. Any indentation is ignored.</p><figure class="my-8">
     <img-comparison-slider hover="hover" class="block rounded-lg overflow-hidden my-8">
         <div slot="first" class="relative">
             <img src="images/no_tonemap.png" class="w-full block" />
@@ -114,8 +114,8 @@ $$</p><h3>Chapter 2</h3><p>Image comparisons example:</p><figure class="my-8">
     </figcaption>
 </figure><p>This is some code:</p><figure class="my-8">
     <div class="code-wrapper not-prose">
-        <pre><code class="language-python">def func(x):
-    return x</code></pre>
+        <pre><code class="language-python">def func(x: int) -> int:
+    return x**2</code></pre>
     </div>
     <figcaption class="figure-caption">Code Description</figcaption>
 </figure>
