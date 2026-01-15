@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError : false
+    });">
+    </script>
+    <link href="resources/prism-one-dark.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+
+    <style>
+        body {
+            background-color: #0D1117;
+            color: #e6edf3;
+        }
+
+        /* Custom caption styling to match your screenshots */
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #8b949e;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        /* Custom code block container */
+        .code-container {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        img-comparison-slider {
+            --divider-width: 2px;
+            --divider-color: #ffffff;
+            --default-handle-opacity: 1;
+            outline: none;
+            display: block;
+            /* Ensures no inline-block padding */
+        }
+
+        /* Prevent the images from having 'bottom-gap' inside the slider */
+        img-comparison-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 !important;
+            /* Override 'prose' margins */
+        }
+
+        img-comparison-slider {
+            --divider-width: 2px;
+            --divider-color: #bdbdbd;
+            --default-handle-opacity: 1;
+        }
+    </style>
+</head>

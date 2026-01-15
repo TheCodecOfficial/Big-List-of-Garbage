@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is the Title</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError : false
+    });">
+    </script>
+    <link href="resources/prism-one-dark.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+
+    <style>
+        body {
+            background-color: #0D1117;
+            color: #e6edf3;
+        }
+
+        /* Custom caption styling to match your screenshots */
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #8b949e;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        /* Custom code block container */
+        .code-container {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        img-comparison-slider {
+            --divider-width: 2px;
+            --divider-color: #ffffff;
+            --default-handle-opacity: 1;
+            outline: none;
+            display: block;
+            /* Ensures no inline-block padding */
+        }
+
+        /* Prevent the images from having 'bottom-gap' inside the slider */
+        img-comparison-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 !important;
+            /* Override 'prose' margins */
+        }
+
+        img-comparison-slider {
+            --divider-width: 2px;
+            --divider-color: #bdbdbd;
+            --default-handle-opacity: 1;
+        }
+    </style>
+</head><body class="antialiased">
+
+    <main class="max-w-3xl mx-auto px-6 py-12 prose prose-invert prose-pre:bg-transparent">
+
+        <header class="text-center not-prose mb-12">
+            <h1 class="text-4xl font-bold mb-2">This is the Title</h1>
+            <p class="text-gray-400">15.01.2026</p>
+        </header>
+
+        <figure class="my-8">
+    <img src="images/render.png" alt="An image description" class="rounded-lg w-full mb-0">
+    <figcaption class="figure-caption">An image description</figcaption>
+</figure><h3>Chapter 1</h3><p>This is some introductory text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit auctor vehicula. Ut non laoreet eros, lacinia tristique erat. Fusce tincidunt, mauris nec euismod accumsan, quam tellus eleifend eros, vel imperdiet ex libero a arcu. Curabitur dapibus pulvinar nibh, quis mattis urna fermentum at. Suspendisse blandit interdum tortor, non sollicitudin urna cursus quis. Vivamus ac tortor a dui congue aliquam vitae in nisl.</p><p>Latex is supported $e^{i\pi} + 1 = 0$.
+Multiline math works too:
+$$
+L_o = L_e + \int_\Omega f_r L_i (\omega_i) \cos\theta d\omega_i
+$$</p><h3>Chapter 2</h3><p>Image comparisons example:</p><figure class="my-8">
+    <img-comparison-slider hover="hover" class="block rounded-lg overflow-hidden my-8">
+        <div slot="first" class="relative">
+            <img src="images/no_tonemap.png" class="w-full block" />
+            <span class="absolute top-4 left-4 bg-black/50 text-white px-2 py-1 rounded text-sm">
+                No Tonemapping
+            </span>
+        </div>
+
+        <div slot="second" class="relative">
+            <img src="images/bloom.png" class="w-full block" />
+            <span class="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm">
+                With Tonemapping
+            </span>
+        </div>
+    </img-comparison-slider>
+    <figcaption class="figure-caption">Comparison description
+    </figcaption>
+</figure><p>This is some code:</p><figure class="my-8">
+    <div class="code-wrapper not-prose">
+        <pre><code class="language-python">def func(x):
+    return x</code></pre>
+    </div>
+    <figcaption class="figure-caption">Code Description</figcaption>
+</figure>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</body>
+
+</html>

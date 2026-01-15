@@ -1,0 +1,35 @@
+!title: This is the Title
+
+!img:
+    images/render.png
+    An image description
+
+!chapter: Chapter 1
+This is some introductory text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit auctor vehicula. Ut non laoreet eros, lacinia tristique erat. Fusce tincidunt, mauris nec euismod accumsan, quam tellus eleifend eros, vel imperdiet ex libero a arcu. Curabitur dapibus pulvinar nibh, quis mattis urna fermentum at. Suspendisse blandit interdum tortor, non sollicitudin urna cursus quis. Vivamus ac tortor a dui congue aliquam vitae in nisl.
+
+Latex is supported $e^{i\pi} + 1 = 0$.
+
+Multiline math works too:
+$$
+L_o = L_e + \int_\Omega f_r L_i (\omega_i) \cos\theta d\omega_i
+$$
+
+!chapter: Chapter 2
+
+Image comparisons example:
+
+!imgcomp:
+    images/no_tonemap.png
+    images/bloom.png
+    No Tonemapping
+    With Tonemapping
+    Comparison description
+
+This is some code:
+
+!codeblock:
+Code Description
+python
+def func(x):
+    return x
+!endcode
