@@ -107,3 +107,4 @@ _string: /[^\n]+/
 - Add support for links
 - Add polyring stuff
 - Live update while editing blog file
+- Add auto numbering for figures, code blocks, tables, etc.
