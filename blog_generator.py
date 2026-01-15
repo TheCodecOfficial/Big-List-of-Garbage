@@ -1,10 +1,9 @@
 from blog_parser import parse_blog
 import datetime
+import sys
 
 html_files = ["body", "chapter", "code_block", "head", "image_comparison", "image", "subchapter", "text_block"]
 components = {k: open(f"resources/components/{k}.html").read() for k in html_files}
-
-blog_file = "test.blog"
 
 
 def generate_content(blocks):
@@ -42,7 +41,7 @@ def generate_content(blocks):
     return content
 
 
-def main():
+def generate_blog(blog_file):
     with open(blog_file) as f:
         blog_content = f.read()
 
@@ -55,9 +54,18 @@ def main():
     body = components["body"].replace("TITLE", blog_data["title"]).replace("DATE", blog_data.get("date", date))
     html += body.replace("CONTENT", generate_content(blog_data["blocks"]))
 
-    with open("generated_blog.html", "w") as f:
+    filename = blog_file.split("/")[-1].replace(".blog", ".html")
+
+    with open(filename, "w") as f:
         f.write(html)
+
+    print(f"Blog generated: {filename}")
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) <= 1:
+        print("Usage: python blog_generator.py <blog_file>")
+        sys.exit(1)
+
+    blog_file = sys.argv[1]
+    generate_blog(blog_file)
