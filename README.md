@@ -13,7 +13,7 @@ This is a simple tool to generate blog posts. It uses a simple markup language t
 
 !chapter: Chapter 1
 
-This is some introductory text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit auctor vehicula. Ut non laoreet eros, lacinia tristique erat. Fusce tincidunt, mauris nec euismod accumsan, quam tellus eleifend eros, vel imperdiet ex libero a arcu. Curabitur dapibus pulvinar nibh, quis mattis urna fermentum at. Suspendisse blandit interdum tortor, non sollicitudin urna cursus quis. Vivamus ac tortor a dui congue aliquam vitae in nisl.
+This is some introductory text. Lorem ipsum dolor sit amet.
 
 !subchapter: Subchapter 1.1
 
@@ -46,6 +46,56 @@ def func(x: int) -> int:
     return x**2
 !endcode
 ```
+
+## Syntax
+
+It follows a simple EBNF grammar:
+
+```lark
+start: document
+
+document: metadata block*
+
+metadata: "!title: " _string "\n"+ ("!date: " /\d{2}\.\d{2}\.\d{4}/ "\n"+)?
+
+block: single_arg_tag
+    | multi_arg_tag
+    | special_tag
+    | text_block
+
+text_block: (text_line "\n"+)+
+
+text_line: /(?!!)[^\n]+/
+
+single_arg_tag: "!chapter: " _string "\n"+ -> chapter
+    | "!subchapter: " _string "\n"+ -> subchapter
+
+multi_arg_tag: img_tag
+    | code_tag
+    | imgcomp_tag
+
+img_tag: "!img:\n" _string "\n" _string "\n"+
+
+code_tag: "!code:\n" _string "\n" _string "\n"+
+
+imgcomp_tag: "!imgcomp:\n" _string "\n" _string "\n" _string "\n" _string "\n" _string "\n"+
+
+special_tag: codeblock_tag
+    | table_tag
+
+codeblock_tag: "!codeblock:\n" _string "\n" _string "\n" code_lines "!endcode" "\n"+ -> codeblock
+
+code_lines: (_string "\n")*
+
+table_tag: "!table:\n" table_rows "!endtable" "\n"+ -> table
+
+table_rows: (table_row "\n")*
+
+table_row: /[^\n|]+/ ("|" /[^\n|]+/)*
+
+_string: /[^\n]+/
+```
+
 
 ## TODO
 
